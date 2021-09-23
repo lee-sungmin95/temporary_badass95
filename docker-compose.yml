@@ -16,6 +16,8 @@ services:
     image: tjdals717_django:4
     networks:
       - gis_2ban_network
+    secrets:
+      - DJANGO_SECRET_KEY
     volumes:
       - gis_2ban_media:/home/badass95/media/
       - gis_2ban_static:/home/badass95/staticfiles/
@@ -40,3 +42,8 @@ volumes:
   gis_2ban_media:
   gis_2ban_static:
   gis_mariadb:
+
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
